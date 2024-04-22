@@ -1,0 +1,29 @@
+.logos_rrss_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  background: rgba(255, 255, 255, 0.24);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  color: #fff;
+}
+
+.github_logo {
+  width: 110px;
+  filter: contrast(0%);
+  padding: 10px;
+}
+
+.linkedin_logo {
+  width: 35px;
+  margin-right: 5px;
+  filter: contrast(0%);
+  padding: 10px;
+}
+
+.netlify_logo {
+  width: 110px;
+  filter: grayscale(100%);
+  padding: 10px;
+}

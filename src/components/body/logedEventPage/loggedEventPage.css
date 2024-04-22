@@ -1,0 +1,55 @@
+.grid_div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: auto;
+  justify-content: center;
+}
+
+.event_section {
+  display: grid;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  margin: 20px 100px 0 100px;
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+  justify-items: center;
+}
+
+.assistants_bbdd {
+  display: none;
+  text-align: center;
+  width: 100px;
+  height: 30px;
+}
+
+.img_bbdd {
+  max-width: 200px;
+  height: 100%;
+}
+
+.confirm_box {
+  display: flex;
+  justify-content: center;
+  height: 60px;
+}
+
+.confirm_text {
+  font-size: 17px;
+  padding: 0 10px;
+  justify-content: center;
+  align-self: center;
+}
+
+.confirmAssistant_bbdd {
+  width: 20px;
+}
+
+.title_bbdd {
+  display: flex;
+  flex-wrap: wrap;
+  width: 20vh;
+  justify-content: center;
+}

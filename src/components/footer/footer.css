@@ -1,0 +1,13 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+}
+
+.footer_title {
+  font-size: 11px;
+  color: rgb(164, 159, 159);
+}
