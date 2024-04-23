@@ -2,13 +2,13 @@ export const footerLogos = [
   {
     href: 'https://github.com/AaronSinergia',
     alt: 'github',
-    src: './src/public/assets/GitHubLogo.png',
+    src: './assets/GitHubLogo.png',
     className: 'github_logo',
   },
   {
     href: 'https://www.linkedin.com/in/aaron-carrasco-romero/',
     alt: 'linkedin',
-    src: './src/public/assets/linkedin.png',
+    src: './assets/linkedin.png',
     className: 'linkedin_logo',
   },
   {
