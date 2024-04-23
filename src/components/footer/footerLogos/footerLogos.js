@@ -1,5 +1,5 @@
 import './footLogos.css';
-import { footerLogos } from '../../../utils/data/footerLogos';
+import { footerLogos } from '../../../utils/data/footer/footerLogos';
 
 const footLogos = () => {
   const footerDiv = document.createElement('div');

@@ -1,6 +1,6 @@
 import './style.css';
 import header from './src/components/header/header';
-import body from './src/components/body/body';
+import body from './src/components/body/body.jsx';
 import footer from './src/components/footer/footer';
 
 export const appMainBody = () => {

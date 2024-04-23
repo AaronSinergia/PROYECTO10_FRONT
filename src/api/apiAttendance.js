@@ -1,3 +1,5 @@
+import { API_ATTENDANCE_CALL } from '../config/urls';
+
 export const apiAttendance = async (ev) => {
   try {
     const checkChecked = ev.target.checked;
@@ -11,7 +13,10 @@ export const apiAttendance = async (ev) => {
       checkedData.push(eventChecked);
       localStorage.setItem('checked_data', JSON.stringify(checkedData));
 
-      const apiUrlAssistantGoingToEventChecked = `http://localhost:3000/api/events/newAssistant/${checkboxClassName}`;
+      const apiUrlAssistantGoingToEventChecked =
+        API_ATTENDANCE_CALL + `${checkboxClassName}`;
+
+      console.log(apiUrlAssistantGoingToEventChecked);
 
       const response = await fetch(apiUrlAssistantGoingToEventChecked, {
         headers: {

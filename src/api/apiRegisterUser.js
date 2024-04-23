@@ -1,10 +1,11 @@
+import { API_REGISTER_CALL } from '../config/urls';
 import { apiShowAllEvents } from './apiShowAllEvents';
 
 export const apiRegisterUser = async () => {
   const username = document.querySelector('#usuario').value;
   const password = document.querySelector('#contraseña').value;
 
-  const apiUrlRegister = 'http://localhost:3000/api/auth/register';
+  const apiUrlRegister = API_REGISTER_CALL;
 
   const dataRegister = await fetch(apiUrlRegister, {
     headers: {

@@ -1,4 +1,4 @@
-import body from '../components/body/body';
+import body from '../body';
 
 const returnToLogin = () => {
   const main = document.querySelector('main');

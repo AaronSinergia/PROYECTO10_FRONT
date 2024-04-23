@@ -1,3 +1,4 @@
+import { API_LOGIN_CALL } from '../config/urls';
 import { apiShowAllEvents } from './apiShowAllEvents';
 
 const waitForElements = async (selector) => {
@@ -19,7 +20,7 @@ export const apiLoginUser = async () => {
   const username = document.querySelector('#usuario').value;
   const password = document.querySelector('#contraseña').value;
 
-  const apiUrlLogin = 'http://localhost:3000/api/auth/login';
+  const apiUrlLogin = API_LOGIN_CALL;
 
   try {
     const dataLogin = await fetch(apiUrlLogin, {
@@ -37,14 +38,17 @@ export const apiLoginUser = async () => {
     localStorage.setItem('id', dataRes.assistant._id);
     localStorage.setItem('username', dataRes.assistant.username);
 
+    console.log(dataRes);
+
     if (dataLogin.status === 400) {
       alert('El usuario o contraseña no existen');
     } else {
       alert(`Bienvenido ${username}`);
       apiShowAllEvents();
 
-      if (username === 'AaronSinergia' && dataLogin.status === 200) {
+      if (dataRes.assistant.isAdmin == 'Yes' && dataLogin.status === 200) {
         alert('Te has logado con usuario ADMIN');
+        console.log('Te has logado con usuario ADMIN');
 
         const targetElementInput = await waitForElements('.assistants_bbdd');
 

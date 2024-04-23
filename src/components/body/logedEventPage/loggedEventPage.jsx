@@ -1,5 +1,5 @@
-import apiAttendance from '../../../api/apiAttendance';
-import addNewEventBTN from '../addNewEvent/addNewEventBTN';
+import apiAttendance from '../../../api/apiAttendance.js';
+import addNewEventBTN from '../addNewEvent/addNewEventBTN.jsx';
 import './loggedEventPage.css';
 
 const loggedEventPage = (events) => {
@@ -11,6 +11,7 @@ const loggedEventPage = (events) => {
 
   h1.addEventListener('click', () => {
     localStorage.removeItem('id');
+    localStorage.removeItem('username');
     h1.innerHTML = 'RESURRECTION EVENT MANAGER';
   });
 
