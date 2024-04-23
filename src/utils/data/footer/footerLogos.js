@@ -14,7 +14,7 @@ export const footerLogos = [
   {
     href: 'https://app.netlify.com/teams/aaronsinergia/overview',
     alt: 'netlify',
-    src: '../src/public/assets/netlify_logo_icon_169924.png',
+    src: '../../src/public/assets/netlify_logo_icon_169924.png',
     className: 'netlify_logo',
   },
 ];
