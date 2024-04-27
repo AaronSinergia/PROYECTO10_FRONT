@@ -1,4 +1,4 @@
-import { API_NEWEVENT_CALL } from '../config/urls';
+import { API_URL } from '../config/API_URL';
 
 export const apiCreateNewEv = async (ev) => {
   ev.preventDefault();
@@ -13,7 +13,9 @@ export const apiCreateNewEv = async (ev) => {
 
   const newEvent = JSON.stringify(sendNewEvent);
 
-  const apiUrlNewEvent = API_NEWEVENT_CALL;
+  const newEvents_url = 'events/';
+
+  const apiUrlNewEvent = API_URL + newEvents_url;
 
   const response = await fetch(apiUrlNewEvent, {
     method: 'POST',

@@ -1,4 +1,4 @@
-import { API_ATTENDANCE_CALL } from '../config/urls';
+import { API_URL } from '../config/API_URL';
 
 export const apiAttendance = async (ev) => {
   try {
@@ -13,8 +13,10 @@ export const apiAttendance = async (ev) => {
       checkedData.push(eventChecked);
       localStorage.setItem('checked_data', JSON.stringify(checkedData));
 
+      const newAssistant_url = 'events/newAssistant/';
+
       const apiUrlAssistantGoingToEventChecked =
-        API_ATTENDANCE_CALL + `${checkboxClassName}`;
+        API_URL + newAssistant_url + `${checkboxClassName}`;
 
       console.log(apiUrlAssistantGoingToEventChecked);
 

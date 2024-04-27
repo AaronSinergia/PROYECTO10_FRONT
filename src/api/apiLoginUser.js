@@ -1,4 +1,4 @@
-import { API_LOGIN_CALL } from '../config/urls';
+import { API_URL } from '../config/API_URL';
 import { apiShowAllEvents } from './apiShowAllEvents';
 
 const waitForElements = async (selector) => {
@@ -20,7 +20,8 @@ export const apiLoginUser = async () => {
   const username = document.querySelector('#usuario').value;
   const password = document.querySelector('#contraseña').value;
 
-  const apiUrlLogin = API_LOGIN_CALL;
+  const login_url = 'auth/login';
+  const apiUrlLogin = API_URL + login_url;
 
   try {
     const dataLogin = await fetch(apiUrlLogin, {

@@ -1,7 +1,10 @@
+import { API_URL } from '../config/API_URL';
 import { fetchFunction } from '../functions/fetchFunction';
 
 export const apiShowAllEvents = () => {
-  const apiUrlGET = 'http://localhost:3000/api/events';
+  const events_url = 'events';
+
+  const apiUrlGET = API_URL + events_url;
 
   fetchFunction(apiUrlGET);
 };
