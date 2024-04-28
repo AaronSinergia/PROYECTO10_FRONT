@@ -25,7 +25,7 @@ const loggedEventPage = (events) => {
 
   const localStorageUSERNAME = localStorage.getItem('username');
 
-  for (const data of events) {
+  for (const data of events.response) {
     const eventSection = document.createElement('section');
     eventSection.className = 'event_section';
 

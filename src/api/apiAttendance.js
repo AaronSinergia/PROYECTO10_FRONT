@@ -1,4 +1,4 @@
-import { API_URL } from '../config/API_URL';
+import { fetchFunction } from '../functions/fetchFunction';
 
 export const apiAttendance = async (ev) => {
   try {
@@ -13,24 +13,15 @@ export const apiAttendance = async (ev) => {
       checkedData.push(eventChecked);
       localStorage.setItem('checked_data', JSON.stringify(checkedData));
 
-      const newAssistant_url = 'events/newAssistant/';
-
-      const apiUrlAssistantGoingToEventChecked =
-        API_URL + newAssistant_url + `${checkboxClassName}`;
-
-      console.log(apiUrlAssistantGoingToEventChecked);
-
-      const response = await fetch(apiUrlAssistantGoingToEventChecked, {
-        headers: {
-          'Content-Type': 'application/json',
-        },
+      const response = await fetchFunction({
+        endpoint: `events/newAssistant/${checkboxClassName}`,
         method: 'PUT',
         body: JSON.stringify({
           assistants: userID,
         }),
       });
 
-      if (response.ok) {
+      if (response.status === 200) {
         console.log('Asistente agregado correctamente');
       } else {
         console.error('Error al agregar asistente');

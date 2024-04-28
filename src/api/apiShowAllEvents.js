@@ -1,19 +1,17 @@
-import { API_URL } from '../config/API_URL';
 import { fetchFunction } from '../functions/fetchFunction';
+import loggedEventPage from '../components/body/logedEventPage/loggedEventPage';
 
-export const apiShowAllEvents = () => {
-  const events_url = 'events';
+export const apiShowAllEvents = async () => {
+  const response = await fetchFunction({ endpoint: 'events' });
+  loggedEventPage(response);
 
-  const apiUrlGET = API_URL + events_url;
-
-  fetchFunction(apiUrlGET);
+  console.log(response);
 };
 
-window.addEventListener('load', function (ev) {
+window.addEventListener('load', function () {
   const userID = localStorage.getItem('id');
   if (userID) {
     apiShowAllEvents();
-
     console.log(
       '¡El ID está presente en el localStorage al recargar la página!'
     );

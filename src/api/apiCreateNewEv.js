@@ -1,4 +1,4 @@
-import { API_URL } from '../config/API_URL';
+import { fetchFunction } from '../functions/fetchFunction';
 
 export const apiCreateNewEv = async (ev) => {
   ev.preventDefault();
@@ -13,19 +13,15 @@ export const apiCreateNewEv = async (ev) => {
 
   const newEvent = JSON.stringify(sendNewEvent);
 
-  const newEvents_url = 'events/';
-
-  const apiUrlNewEvent = API_URL + newEvents_url;
-
-  const response = await fetch(apiUrlNewEvent, {
+  const response = await fetchFunction({
+    endpoint: 'events/',
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
     body: newEvent,
   });
 
-  if (response.ok) {
+  console.log(response.status);
+
+  if (response.status === 201) {
     alert('El evento ha sido agregado exitosamente.');
 
     const newForm = document.querySelector('form');
@@ -34,10 +30,11 @@ export const apiCreateNewEv = async (ev) => {
     newBtnGoBack.innerHTML = 'Atrás';
     newBtnGoBack.className = 'back_btn';
     newBtnGoBack.addEventListener('click', () => {
-      alert(
-        'Por políticas de seguridad, y prevenir la inserción de eventos con bots, vamos a redirigirte para que vuelvas a loguearte.'
-      );
-      window.location.reload();
+      const h1 = document.querySelector('h1');
+
+      localStorage.removeItem('id');
+      localStorage.removeItem('username');
+      h1.innerHTML = 'RESURRECTION EVENT MANAGER';
     });
 
     newForm.appendChild(newBtnGoBack);
